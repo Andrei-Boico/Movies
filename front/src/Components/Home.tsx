@@ -8,7 +8,7 @@ function Home(){
     return(<>
     <div className="flex flex-col w-[100%]  ">
 
-<div className="w-[100%] min-h-[100vh] h-auto bg-cover bg-center flex items-center justify-center" 
+<div className="w-[100%] h-[100vh]  bg-cover bg-center flex items-center justify-center" 
      style={{backgroundImage:'url("/Images/collage-classic.jpg")'}}>
 
 <div className="flex flex-col mt-[300px]" >
@@ -26,9 +26,9 @@ function Home(){
 
 
 
+{/* 
 
-
-<div className="w-full min-h-screen flex flex-col justify-center items-center bg-[#101119]">
+<div className="w-[100%] h-[100vh] flex flex-col justify-center items-center bg-[#101119]">
   <div className="w-full max-w-[1200px] px-4 text-center">
     <h1 className="text-white text-2xl sm:text-4xl font-extrabold">Explore our wide variety of categories</h1>
     <p className="text-gray-300 text-sm md:text-lg mt-2">Whether you're looking for a comedy...</p>
@@ -58,9 +58,44 @@ function Home(){
       </div>
     ))}
   </div>
+</div>   */}
+
+
+
+<div className="w-[100%] h-[100vh] bg-[#101119] flex justify-center items-center flex-col">
+  <div className="w-full max-w-[1200px] px-4 text-center">
+    <h1 className="text-white text-2xl sm:text-4xl font-extrabold">Explore our wide variety of categories</h1>
+    <p className="text-gray-300 text-sm md:text-lg mt-2">Whether you're looking for a comedy...</p>
+  </div>
+<div
+  id="divi"
+  className="flex overflow-x-auto space-x-4  px-4 mt-6 py-4 hide-scrollbar lg:w-[1400px] md:w-[1000px] sm:w-[800px] w-[400px]"
+>
+  {data &&
+    data.map((element, index) => (
+      <div
+        key={index}
+        className="flex-shrink-0 flex flex-col items-center rounded-lg p-4 bg-[#323334] min-w-[200px] sm:min-w-[220px] md:min-w-[240px]"
+      >
+        <div
+          className="w-full aspect-video bg-cover bg-center rounded"
+          style={{ backgroundImage: `url(${element.url})` }}
+        ></div>
+        <div className="flex w-full mt-4 justify-between items-center px-2">
+          <p className="text-white text-sm sm:text-base">{element.name}</p>
+          <motion.button
+            whileHover={{ opacity: 0.7 }}
+            whileTap={{ opacity: 1 }}
+            className="text-white w-10 h-10 rounded-full bg-gray-400 flex items-center justify-center"
+          >
+            <i className="fa-solid fa-arrow-right"></i>
+          </motion.button>
+        </div>
+      </div>
+    ))}
 </div>
 
-
+</div>
 
 
 
