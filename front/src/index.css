@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+
+/* Скрыть полосу прокрутки для всех браузеров */
+#divi {
+  -ms-overflow-style: none;  /* IE и Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+#divi::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
