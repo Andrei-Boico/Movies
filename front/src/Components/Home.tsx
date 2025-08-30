@@ -129,7 +129,7 @@ function Home(){
   info.map((element, index) => (
     <div
       key={index}
-      className="w-[350px] sm:w-[450px] flex flex-col p-4 mb-3 bg-[#1a1b25] rounded-2xl shadow-lg"
+      className="w-[370px] sm:w-[450px] flex flex-col p-4 mb-3 bg-[#1a1b25] rounded-2xl shadow-lg"
     >
       <div
         className="flex flex-row justify-between items-center cursor-pointer"
@@ -167,8 +167,8 @@ function Home(){
 </div>
 
 <div className="w-[100%] h-auto flex flex-col items-center">
-<div className="bg-center bg-cover w-[100%] sm:w-[70%] h-[350px] relative mb-[200px]"
- style={{backgroundImage:'url("/public/4fxxbm4opjd31.jpg")'}}
+<div className="bg-center bg-cover w-[100%] sm:w-[70%] h-[350px] relative mb-[200px] rounded-[10px]"
+ style={{backgroundImage:'url("/ImagesMovies/4fxxbm4opjd31.jpg")'}}
 >
 <div className="absolute top-0 left-0 w-[100%] h-full bg-gradient-to-r from-black/80 to-red-500/70 flex flex-col justify-center items-center">
 <h1 className="text-[25px] text-white font-extrabold" >Start your free trial today!</h1>
