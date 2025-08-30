@@ -24,7 +24,9 @@ function Home(){
     <div className="w-[350px] p-0 lg:w-[1000px] md:w-[800px] smn:w-[600px] sm:p-[10px]">
     <p className="text-gray-300 text-[15px] md:text-[20px]">StreamVibe is the best streaming experience for watching your favorite movies and shows on demand, anytime, anywhere. With StreamVibe, you can enjoy a wide variety of content, including the latest blockbusters, classic movies, popular TV shows, and more. You can also create your own watchlists, so you can easily find the content you want to watch.</p>
     </div>
+   
     <motion.button whileTap={{opacity:1}} whileHover={{opacity:0.7}} style={{backgroundColor:"#F1A208"}} className="text-white w-[200px]  h-[50px] rounded-[10px]  my-[10px] shadow-sm shadow-white "> <i className="fa-solid fa-play pr-[5px]"></i>Start Watching Now</motion.button>
+
 </div>
 </div>
 
@@ -164,7 +166,21 @@ function Home(){
 
 </div>
 
+<div className="w-[100%] h-auto flex flex-col items-center">
+<div className="bg-center bg-cover w-[100%] sm:w-[70%] h-[350px] relative mb-[200px]"
+ style={{backgroundImage:'url("/public/4fxxbm4opjd31.jpg")'}}
+>
+<div className="absolute top-0 left-0 w-[100%] h-full bg-gradient-to-r from-black/80 to-red-500/70 flex flex-col justify-center items-center">
+<h1 className="text-[25px] text-white font-extrabold" >Start your free trial today!</h1>
+<p className="text-gray-400 text-[15px]">This is a clear and concise call to action that encourages users to sign up for a free trial of StreamVibe.</p>
+  <motion.button whileTap={{opacity:1}} whileHover={{opacity:0.7}} style={{backgroundColor:"#F1A208"}} className="text-white w-[200px]  h-[50px] rounded-[10px]  my-[10px]  "> Let's Start </motion.button>
 
+</div>
+
+</div>
+
+
+</div>
 
 
 
