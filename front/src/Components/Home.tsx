@@ -1,15 +1,20 @@
-import {motion} from "framer-motion"
+import {motion, useScroll} from "framer-motion"
 import useData from "../Data"
+import { useState } from "react";
 function Home(){
 
   const data = useData((state) => state.data);
+  const data2 = useData((state) => state.data2);
+  const info = useData((state) => state.info);
 
 
+
+  let [open , setopen] = useState<number>()
     return(<>
     <div className="flex flex-col w-[100%]  ">
 
 <div className="w-[100%] h-[100vh]  bg-cover bg-center flex items-center justify-center" 
-     style={{backgroundImage:'url("/Images/collage-classic.jpg")'}}>
+     style={{backgroundImage:'url("/ImagesMovies/collage-classic.jpg")'}}>
 
 <div className="flex flex-col mt-[300px]" >
     <div className="w-[350px] p-0 lg:w-[800px] md:w-[600px] sm:w-[400px] sm:p-[10px]">
@@ -26,39 +31,7 @@ function Home(){
 
 
 
-{/* 
 
-<div className="w-[100%] h-[100vh] flex flex-col justify-center items-center bg-[#101119]">
-  <div className="w-full max-w-[1200px] px-4 text-center">
-    <h1 className="text-white text-2xl sm:text-4xl font-extrabold">Explore our wide variety of categories</h1>
-    <p className="text-gray-300 text-sm md:text-lg mt-2">Whether you're looking for a comedy...</p>
-  </div>
-
-  <div id="divi" className="flex overflow-x-auto space-x-4 w-full max-w-[1200px] px-4 mt-6 hide-scrollbar">
-    {data && data.map((element, index) => (
-      <div
-        key={index}
-        className="flex-none w-[300px] h-[300px] rounded-lg p-4 flex flex-col items-center"
-        style={{ backgroundColor: "#323334" }}
-      >
-        <div
-          className="w-full h-[220px] bg-cover bg-center rounded"
-          style={{ backgroundImage: `url(${element.url})` }}
-        ></div>
-        <div className="flex w-full mt-4 justify-between items-center px-2">
-          <p className="text-white">{element.name}</p>
-          <motion.button
-            whileHover={{ opacity: 0.7 }}
-            whileTap={{ opacity: 1 }}
-            className="text-white w-10 h-10 rounded-full bg-gray-400"
-          >
-            <i className="fa-solid fa-arrow-right"></i>
-          </motion.button>
-        </div>
-      </div>
-    ))}
-  </div>
-</div>   */}
 
 
 
@@ -67,13 +40,19 @@ function Home(){
     <h1 className="text-white text-2xl sm:text-4xl font-extrabold">Explore our wide variety of categories</h1>
     <p className="text-gray-300 text-sm md:text-lg mt-2">Whether you're looking for a comedy...</p>
   </div>
+  <div className="flex w-[100%] mt-5">
+  <h1 className="text-[25px] font-extrabold pl-[30px]" style={{color:"#F1A208"}}>Movies</h1>
+  </div>
+
 <div
   id="divi"
-  className="flex overflow-x-auto space-x-4  px-4 mt-6 py-4 hide-scrollbar lg:w-[1400px] md:w-[1000px] sm:w-[800px] w-[400px]"
+  className="flex overflow-x-auto space-x-4  px-1 mt-3 py-4 hide-scrollbar lg:w-[1400px] md:w-[1000px] sm:w-[800px] w-[400px]"
 >
   {data &&
     data.map((element, index) => (
-      <div
+      <motion.div
+        whileHover={{opacity:0.7}}
+      whileTap={{opacity:1}}
         key={index}
         className="flex-shrink-0 flex flex-col items-center rounded-lg p-4 bg-[#323334] min-w-[200px] sm:min-w-[220px] md:min-w-[240px]"
       >
@@ -84,23 +63,106 @@ function Home(){
         <div className="flex w-full mt-4 justify-between items-center px-2">
           <p className="text-white text-sm sm:text-base">{element.name}</p>
           <motion.button
-            whileHover={{ opacity: 0.7 }}
-            whileTap={{ opacity: 1 }}
+      
             className="text-white w-10 h-10 rounded-full bg-gray-400 flex items-center justify-center"
           >
             <i className="fa-solid fa-arrow-right"></i>
           </motion.button>
         </div>
-      </div>
+      </motion.div>
     ))}
 </div>
 
+
+
+
+  <div className="flex w-[100%] mt-5">
+  <h1 className="text-[25px] font-extrabold pl-[30px]" style={{color:"#F1A208"}}>Serials Popular</h1>
+  </div>
+
+<div
+  id="divi"
+  className="flex overflow-x-auto space-x-4  px-1 mt-3 py-4 hide-scrollbar lg:w-[1400px] md:w-[1000px] sm:w-[800px] w-[400px]"
+>
+  {data2 &&
+    data2.map((element, index) => (
+      <motion.div
+      whileHover={{opacity:0.7}}
+      whileTap={{opacity:1}}
+        key={index}
+        className="flex-shrink-0 flex flex-col items-center rounded-lg p-4 bg-[#323334] min-w-[200px] sm:min-w-[220px] md:min-w-[240px]"
+      >
+        <div
+          className="w-full aspect-video bg-cover bg-center rounded"
+          style={{ backgroundImage: `url(${element.url})` }}
+        ></div>
+        <div className="flex w-full mt-4 justify-between items-center px-2">
+          <p className="text-white text-sm sm:text-base">{element.name}</p>
+          <motion.button
+         
+            className="text-white w-10 h-10 rounded-full bg-gray-400 flex items-center justify-center"
+          >
+            <i className="fa-solid fa-arrow-right"></i>
+          </motion.button>
+        </div>
+      </motion.div>
+    ))}
+</div>
 </div>
 
 
 
 
+<div className="w-[100%] h-auto min-h-[100vh] flex flex-col bg-[#101119] items-center px-4">
+  <div className="w-full ] px-2 flex flex-col items-center text-center">
+    <h1 className="text-white text-[25px] font-extrabold mb-2">
+      Frequently Asked Questions
+    </h1>
+    <p className="text-gray-400 text-[10px] sm:text-[15px] my-4 ">
+      Got questions? We've got answers! Check out our FAQ section to find answers to the most common questions about StreamVibe.
+    </p>
+  </div>
+ <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full place-items-center mt-[50px]">
+{info &&
+  info.map((element, index) => (
+    <div
+      key={index}
+      className="w-[350px] sm:w-[450px] flex flex-col p-4 mb-3 bg-[#1a1b25] rounded-2xl shadow-lg"
+    >
+      <div
+        className="flex flex-row justify-between items-center cursor-pointer"
+        onClick={() => setopen(index == open ? -1 : index)}
+      >
+        <div className="flex flex-row items-center space-x-2">
+          <span className="text-gray-400 font-bold">{index + 1}.</span>
+          <p className="text-[18px] text-white font-semibold">
+            {element.name}
+          </p>
+        </div>
 
+        <span
+          className={`text-white text-[20px] transform transition-transform duration-300`}
+        >
+          {open === index ? "×" : "+"}
+        </span>
+      </div>
+
+      <div
+        className={`overflow-hidden transition-all duration-500 ${
+          open === index ? "max-h-40 mt-2" : "max-h-0"
+        }`}
+      >
+        <p className="text-gray-400 text-[15px] leading-relaxed">
+          {element.descr}
+        </p>
+      </div>
+    </div>
+  ))}
+
+</div>
+
+
+</div>
 
 
 
