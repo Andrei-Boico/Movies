@@ -5,7 +5,7 @@ function Nav (){
 let [view , setview] = useState(false)
     return(<>
 
-    <div className="fixed top-0 left-0 w-full h-[60px] h-20  items-center px-1 sm:px-6 backdrop-blur-md bg-[rgba(144,144,145,0.2)] z-50 justify-between hidden  sm:flex" >
+    <div className="fixed top-0 left-0 w-full h-[60px]   items-center px-1 sm:px-6 backdrop-blur-md bg-[rgba(144,144,145,0.2)] z-50 justify-between hidden  sm:flex" >
         <div className="flex h-full items-center ">
       <h1 className="text-white mr-6 font-bold">Movies</h1>
       <Link to="/" className="text-white mr-4"> <motion.p whileHover={{color:"#F1A208"}}>Home</motion.p></Link>
